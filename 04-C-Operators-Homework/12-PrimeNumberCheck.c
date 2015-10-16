@@ -15,7 +15,7 @@ int main()
     else
     {
         int isPrime = 1;
-        if (number > 0)
+        if (number > 1)
         {
             int i;
             for (i = 2; i * i <= number; i++)
