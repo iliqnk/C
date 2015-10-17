@@ -7,15 +7,19 @@
  */
 int main() 
 {
-    int input;
+    int input, result;
     if (scanf("%d", &input) != 1)
     {
         printf("Invalid input!");
     }
     else
     {
-        int result = abs(input % 5 == 0) && 
-                        abs(input % 7 == 0);
+        if (input != 0)
+        {
+            result = abs(input % 5 == 0) && 
+                       abs(input % 7 == 0);
+        }
+        
         printf("%d\n", result);
     }
     return 0;
