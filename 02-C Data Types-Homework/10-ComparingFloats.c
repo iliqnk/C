@@ -15,15 +15,14 @@ int main()
     double secondNum;
     double eps = 0.000001;
     
-    if (scanf("%lf %lf", firstNum, secondNum) != 2)
+    if (scanf("%lf %lf", &firstNum, &secondNum) != 2)
     {
         printf("Invalid input!\n");
-        main();
     }
     else
     {
-        double diff = firstNum - secondNum;
-        if (abs(diff) >= eps)
+        double diff = fabs(firstNum - secondNum);
+        if (fabs(diff) >= eps)
         {
             printf("false\n");
         }
