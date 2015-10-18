@@ -22,7 +22,7 @@ int main()
     else
     {
         double diff = fabs(firstNum - secondNum);
-        if (fabs(diff) >= eps)
+        if (diff >= eps)
         {
             printf("false\n");
         }
