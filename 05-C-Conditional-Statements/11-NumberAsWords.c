@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
+
 /*
  * Write a program that converts a number in the range [0...999] to words, 
  * corresponding to the English pronunciation.
@@ -8,11 +10,14 @@ int main()
 {
     char zeroToTen[10][10] = {"zero", "one", "two", "three", "four", "five",
                                 "six", "seven", "eight", "nine"};
+    char upperZeroToTen[9][9] = {"One", "Two", "Three", "Four", "Five",
+                                "Six", "Seven", "Eight", "Nine"};
+    
     char tenToNineteen[10][10] = {"ten", "eleven", "twelve", "thirteen", 
                                 "fourteen", "fifteen", "sixteen",
                                 "seventeen", "eighteen", "nineteen"};
     char tens[8][8] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", 
-                        "eighty", "ninty"};
+                        "eighty", "ninety"};
     
     char* numberAsString[30];
     int input, ones, ten, teens, hundreds;
@@ -60,9 +65,8 @@ int main()
             {
                 if ((teens == 0) && ones != 0)
                 {
-                    zeroToTen[hundreds][0] = toupper(zeroToTen[hundreds][0]);
-                    printf("%s hunded and %s", 
-                            zeroToTen[hundreds], 
+                    printf("%s hundred and %s", 
+                            upperZeroToTen[hundreds - 1], 
                             zeroToTen[ones]);
                 }
                 else if ((teens == 0) && ones == 0)
@@ -73,22 +77,21 @@ int main()
                 else if ((teens > 0) && ones == 0)
                 {
                     zeroToTen[hundreds][0] = toupper(zeroToTen[hundreds][0]);
-                    printf("%s hunded and %s", 
+                    printf("%s hundred and %s", 
                             zeroToTen[hundreds], 
                             tens[teens - 2]);
                 }
                 else if (teens == 1)
                 {
                     zeroToTen[hundreds][0] = toupper(zeroToTen[hundreds][0]);
-                    printf("%s hunded and %s", 
+                    printf("%s hundred and %s", 
                             zeroToTen[hundreds], 
                             tenToNineteen[ones]);
                 }
                 else
                 {
-                    zeroToTen[hundreds][0] = toupper(zeroToTen[hundreds][0]);
-                    printf("%s hunded and %s %s", 
-                            zeroToTen[hundreds], 
+                    printf("%s hundred and %s %s", 
+                            upperZeroToTen[hundreds - 1], 
                             tens[teens - 2], 
                             zeroToTen[ones]);
                 }
