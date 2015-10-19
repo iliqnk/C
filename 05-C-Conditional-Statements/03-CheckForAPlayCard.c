@@ -22,26 +22,34 @@ int main()
     {
         printf("yes");
     }
-            
-    switch (input[0])
+    
+    if (input[1] == '\0')
     {
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
-        case 'J':
-        case 'Q':
-        case 'K':
-        case 'A':
-            printf("yes");
-            break;
-        default:
-            printf("no");
-            break;           
+        switch (input[0])
+        {
+            case '2':
+            case '3':
+            case '4':
+            case '5':
+            case '6':
+            case '7':
+            case '8':
+            case '9':
+            case 'J':
+            case 'Q':
+            case 'K':
+            case 'A':
+                printf("yes");
+                break;
+            default:
+                printf("no");
+                break;     
+        }
+          
+    }
+    else
+    {
+        printf("no");
     }
     
     return 0;
