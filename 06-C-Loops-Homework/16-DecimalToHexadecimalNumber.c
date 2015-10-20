@@ -15,6 +15,11 @@ int main()
     }
     else
     {
+        if (decimal == 0)
+        {
+            printf("0");
+            return 0;
+        }
         char hex[50];
         long long i, rest;
         int j;
