@@ -28,8 +28,7 @@ char *read_line()
     int initialSize = 4;
     char *readline = malloc(initialSize);
     int index = 0;
-    char ch;
-    scanf("%c", &ch);
+    char ch = getchar();
     while (ch != '\n')
     {
         if (index == initialSize - 1)
@@ -47,7 +46,7 @@ char *read_line()
         
         *(readline + index) = ch;
         index++;
-        scanf("%c", &ch);
+        ch = getchar();
     }
     
     *(readline + index) = '\0';
